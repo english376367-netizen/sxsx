@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading Comprehension – Vietnamese Meaning</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#eef3f8;color:#172033;font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+.wrap{max-width:1100px;margin:auto;padding:15px}
+.card{background:#fff;border-radius:18px;padding:20px;margin:16px 0;box-shadow:0 4px 18px #0001}
+h1,h2{color:#1254d8}
+h1{font-size:27px;margin-top:0}
+h2{font-size:22px;border-bottom:2px solid #dbe5ff;padding-bottom:8px}
+.instructions{background:#fff9cf;border-left:5px solid #dfc400;padding:12px;border-radius:9px}
+.source{background:#f7f9fc;border:1px solid #dce3ed;border-radius:11px;padding:15px;margin-bottom:18px}
+.question{border:1px solid #d8dfeb;border-radius:12px;padding:14px;margin:13px 0;background:#fcfdff}
+.en{font-weight:700;margin-bottom:10px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.option{border:1px solid #ccd5e4;border-radius:9px;padding:9px;background:#fff;cursor:pointer}
+.option:hover{background:#f0f5ff}
+.option input{margin-right:7px}
+.correct{background:#dcf6e6!important;border-color:#43a86a!important}
+.wrong{background:#ffe1e1!important;border-color:#db6d6d!important}
+.explanation{display:none;margin-top:11px;background:#f4f6fa;border-left:4px solid #6576a2;padding:11px;border-radius:7px}
+.explanation.show{display:block}
+.meaning{margin-top:6px;color:#35435e}
+.result{font-size:19px;font-weight:700;margin:12px 0}
+button{border:0;border-radius:9px;padding:11px 17px;font-weight:700;cursor:pointer}
+.submit{background:#1254d8;color:#fff}
+.reset{background:#e8edf4;color:#26324a;margin-left:7px}
+.answer{color:#168447;font-weight:700;margin-top:6px}
+@media(max-width:700px){.options{grid-template-columns:1fr}}
+@media(max-width:450px){.card{padding:13px}.en{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+<h1>Reading Comprehension – Understand the Vietnamese Meaning</h1>
+<div class="instructions">
+<b>Task:</b> Read each English sentence and choose the Vietnamese translation that best matches its meaning.<br>
+<b>Scoring:</b> Each passage is scored separately. The correct answer and explanation appear only after you click <b>Submit</b>.
+</div>
+</div>
+
+<div class="card">
+<h2>① Following Your Passions</h2>
+<div class="source">
+<b>Original passage:</b><br><br>
+Have you ever felt so passionate about something that you couldn’t stop thinking about it? That overwhelming feeling of excitement and dedication is what makes following your passions so rewarding. For teenagers, discovering their passions can be a significant step towards a fulfilling future.<br><br>
+Passions can take many forms. It could be a love for music and playing an instrument, a fascination with science and conducting experiments, or a talent for writing and expressing oneself creatively. When teenagers pursue their passions, they often experience a sense of purpose and motivation. They become eager to learn, develop new skills, and overcome challenges.<br><br>
+However, focusing on a passion isn’t always easy. There may be times when friends seem more interested in different things, or family expectations can seem at odds with personal aspirations. It’s important to remember that pursuing a passion requires commitment and perseverance. There will be setbacks and moments of doubt, but the feeling of accomplishment and satisfaction from pursuing something you truly love is worth the effort.
+</div>
+<div id="p1"></div>
+<div id="r1" class="result"></div>
+<button class="submit" onclick="submitPart(1)">Submit Part 1</button>
+<button class="reset" onclick="resetPart(1)">Reset</button>
+</div>
+
+<div class="card">
+<h2>② Balancing School, Activities and Social Life</h2>
+<div class="source">
+<b>Original passage:</b><br><br>
+Being a teenager is like navigating a three-ring circus. On one hand, you’re juggling the demands of school, with exams, homework, and projects testing your academic skills. On the other hand, you’re likely involved in extracurricular activities, from sports and clubs to music lessons and volunteering. Add to that the ever-present desire for social interaction with friends and family, and it’s no wonder teenagers often feel stretched thin.<br><br>
+This constant balancing act can be challenging. Finding enough time to meet all your commitments can be a struggle, leading to feelings of stress and anxiety. Prioritizing tasks and creating a schedule can help, but unexpected events and changes in plans can throw everything out of whack.<br><br>
+However, navigating this juggling act also offers valuable lessons. It teaches teenagers valuable skills like time management, organization, and prioritization. They learn to be responsible, handle pressure, and adapt to changing situations. Additionally, the diverse experiences gained through academics, activities, and social interactions contribute to personal development and self-discovery.
+</div>
+<div id="p2"></div>
+<div id="r2" class="result"></div>
+<button class="submit" onclick="submitPart(2)">Submit Part 2</button>
+<button class="reset" onclick="resetPart(2)">Reset</button>
+</div>
+</div>
+
+<script>
+const sets={
+1:[
+["Have you ever felt so passionate about something that you couldn’t stop thinking about it?",
+["Bạn đã bao giờ cảm thấy say mê một điều gì đó đến mức không thể ngừng nghĩ về nó chưa?","Bạn đã bao giờ cảm thấy chán một điều gì đó đến mức không muốn nghĩ về nó chưa?","Bạn đã bao giờ quên hoàn toàn một điều mà mình yêu thích chưa?","Bạn có thường tránh nghĩ về những điều mình yêu thích không?"],0,
+"<b>so + adjective + that + clause</b> = quá... đến mức mà...; <b>passionate about</b> = say mê/đam mê điều gì; <b>couldn’t stop thinking about</b> = không thể ngừng nghĩ về.",
+"Bạn đã bao giờ cảm thấy say mê một điều gì đó đến mức không thể ngừng nghĩ về nó chưa?"],
+["That overwhelming feeling of excitement and dedication is what makes following your passions so rewarding.",
+["Cảm giác phấn khích và tận tâm mãnh liệt đó chính là điều khiến việc theo đuổi đam mê trở nên đáng giá đến vậy.","Cảm giác mệt mỏi đó khiến việc theo đuổi đam mê trở nên vô ích.","Sự thất vọng khiến mọi người từ bỏ đam mê của mình.","Việc theo đuổi đam mê luôn khiến con người cảm thấy buồn chán."],0,
+"<b>overwhelming</b> = mãnh liệt, mạnh mẽ đến mức lấn át; <b>dedication</b> = sự tận tâm; <b>rewarding</b> = đáng giá, đem lại sự hài lòng.",
+"Cảm giác phấn khích và tận tâm mãnh liệt đó là điều khiến việc theo đuổi đam mê trở nên đáng giá."],
+["For teenagers, discovering their passions can be a significant step towards a fulfilling future.",
+["Đối với thanh thiếu niên, khám phá đam mê của mình có thể là một bước quan trọng hướng tới một tương lai viên mãn.","Đối với thanh thiếu niên, việc khám phá đam mê không có ích cho tương lai.","Thanh thiếu niên nên từ bỏ đam mê để tập trung vào học tập.","Tương lai viên mãn chỉ có thể đạt được nếu không theo đuổi đam mê."],0,
+"<b>a significant step towards</b> = một bước quan trọng hướng tới; <b>fulfilling future</b> = tương lai viên mãn, ý nghĩa.",
+"Đối với thanh thiếu niên, khám phá đam mê có thể là một bước quan trọng hướng tới một tương lai viên mãn."],
+["Passions can take many forms.",
+["Đam mê có thể tồn tại dưới nhiều hình thức khác nhau.","Đam mê chỉ có một hình thức duy nhất.","Đam mê luôn liên quan đến âm nhạc.","Đam mê không thể thay đổi theo mỗi người."],0,
+"<b>take many forms</b> = có nhiều hình thức/dạng khác nhau.",
+"Đam mê có thể có nhiều hình thức khác nhau."],
+["It could be a love for music and playing an instrument, a fascination with science and conducting experiments, or a talent for writing and expressing oneself creatively.",
+["Đó có thể là tình yêu với âm nhạc và chơi nhạc cụ, sự say mê khoa học và tiến hành thí nghiệm, hoặc tài năng viết lách và thể hiện bản thân một cách sáng tạo.","Đó chỉ có thể là tình yêu dành cho thể thao và các hoạt động ngoài trời.","Đam mê luôn phải liên quan đến việc học khoa học.","Người trẻ không thể thể hiện bản thân thông qua viết lách."],0,
+"<b>a love for</b> = tình yêu dành cho; <b>a fascination with</b> = sự say mê với; <b>conduct experiments</b> = tiến hành thí nghiệm; <b>express oneself</b> = thể hiện bản thân.",
+"Đam mê có thể là yêu âm nhạc và chơi nhạc cụ, say mê khoa học và làm thí nghiệm, hoặc có năng khiếu viết và thể hiện bản thân một cách sáng tạo."],
+["When teenagers pursue their passions, they often experience a sense of purpose and motivation.",
+["Khi thanh thiếu niên theo đuổi đam mê, họ thường cảm nhận được mục đích và động lực.","Khi thanh thiếu niên từ bỏ đam mê, họ luôn cảm thấy có động lực.","Theo đuổi đam mê khiến thanh thiếu niên mất phương hướng.","Thanh thiếu niên không bao giờ tìm thấy mục đích khi theo đuổi đam mê."],0,
+"<b>pursue</b> = theo đuổi; <b>a sense of purpose</b> = cảm giác/mục đích sống; <b>motivation</b> = động lực.",
+"Khi thanh thiếu niên theo đuổi đam mê, họ thường có cảm giác về mục đích và động lực."],
+["They become eager to learn, develop new skills, and overcome challenges.",
+["Họ trở nên háo hức học hỏi, phát triển các kỹ năng mới và vượt qua thử thách.","Họ trở nên không muốn học và tránh mọi thử thách.","Họ chỉ muốn nghỉ ngơi và không học thêm kỹ năng mới.","Họ từ bỏ việc phát triển kỹ năng khi gặp khó khăn."],0,
+"<b>become eager to + V</b> = trở nên háo hức muốn làm gì; <b>develop skills</b> = phát triển kỹ năng; <b>overcome challenges</b> = vượt qua thử thách.",
+"Họ trở nên háo hức học hỏi, phát triển kỹ năng mới và vượt qua thử thách."],
+["However, focusing on a passion isn’t always easy.",
+["Tuy nhiên, tập trung vào một niềm đam mê không phải lúc nào cũng dễ dàng.","Tuy nhiên, theo đuổi đam mê luôn rất dễ dàng.","Tập trung vào đam mê chưa bao giờ gây khó khăn.","Vì vậy, mọi người nên từ bỏ đam mê."],0,
+"<b>however</b> = tuy nhiên; <b>focus on</b> = tập trung vào; <b>isn’t always</b> = không phải lúc nào cũng.",
+"Tuy nhiên, tập trung vào một niềm đam mê không phải lúc nào cũng dễ dàng."],
+["There may be times when friends seem more interested in different things, or family expectations can seem at odds with personal aspirations.",
+["Có thể có những lúc bạn bè dường như quan tâm hơn đến những điều khác, hoặc kỳ vọng của gia đình dường như mâu thuẫn với nguyện vọng cá nhân.","Bạn bè luôn ủng hộ mọi đam mê và gia đình luôn đồng ý với mọi mong muốn.","Gia đình luôn phản đối tất cả những điều mà bạn bè thích.","Không bao giờ có sự khác biệt giữa kỳ vọng gia đình và mong muốn cá nhân."],0,
+"<b>There may be times when</b> = có thể có những lúc; <b>at odds with</b> = mâu thuẫn với; <b>personal aspirations</b> = nguyện vọng cá nhân.",
+"Có thể có những lúc bạn bè quan tâm đến những điều khác, hoặc kỳ vọng của gia đình mâu thuẫn với nguyện vọng cá nhân."],
+["It’s important to remember that pursuing a passion requires commitment and perseverance.",
+["Điều quan trọng cần nhớ là theo đuổi đam mê đòi hỏi sự cam kết và kiên trì.","Theo đuổi đam mê không cần bất kỳ nỗ lực nào.","Điều quan trọng là từ bỏ đam mê khi gặp khó khăn.","Đam mê chỉ cần tài năng, không cần sự kiên trì."],0,
+"<b>It’s important to remember that...</b> = điều quan trọng cần nhớ là...; <b>require</b> = đòi hỏi; <b>commitment</b> = sự cam kết; <b>perseverance</b> = sự kiên trì.",
+"Điều quan trọng cần nhớ là theo đuổi đam mê đòi hỏi sự cam kết và kiên trì."],
+["There will be setbacks and moments of doubt, but the feeling of accomplishment and satisfaction from pursuing something you truly love is worth the effort.",
+["Sẽ có những thất bại và những lúc nghi ngờ, nhưng cảm giác thành tựu và hài lòng khi theo đuổi điều mình thực sự yêu thích là xứng đáng với nỗ lực bỏ ra.","Nếu gặp thất bại, bạn nên ngay lập tức từ bỏ điều mình yêu thích.","Theo đuổi đam mê không bao giờ đem lại cảm giác thành tựu.","Mọi nỗ lực đều vô ích nếu có lúc bạn nghi ngờ bản thân."],0,
+"<b>setbacks</b> = những trở ngại/thất bại; <b>moments of doubt</b> = những lúc nghi ngờ; <b>accomplishment</b> = thành tựu; <b>be worth the effort</b> = xứng đáng với công sức.",
+"Sẽ có thất bại và những lúc nghi ngờ, nhưng cảm giác thành tựu và hài lòng từ việc theo đuổi điều mình thực sự yêu thích là xứng đáng với nỗ lực."]
+],
+2:[
+["Being a teenager is like navigating a three-ring circus.",
+["Làm một thiếu niên giống như đang xoay xở trong một rạp xiếc có ba vòng.","Làm thiếu niên giống như tham gia một lớp học yên tĩnh.","Làm thiếu niên chỉ giống như chơi thể thao.","Làm thiếu niên là một giai đoạn hoàn toàn không có áp lực."],0,
+"<b>be like</b> = giống như; <b>navigate</b> ở đây mang nghĩa xoay xở/điều hướng qua một tình huống phức tạp; <b>three-ring circus</b> là hình ảnh ẩn dụ cho rất nhiều việc diễn ra cùng lúc.",
+"Làm thiếu niên giống như phải xoay xở trong một rạp xiếc có ba vòng, tức là có rất nhiều việc cần cân bằng cùng lúc."],
+["On one hand, you’re juggling the demands of school, with exams, homework, and projects testing your academic skills.",
+["Một mặt, bạn phải xoay xở với các yêu cầu của trường học, với các kỳ thi, bài tập và dự án kiểm tra kỹ năng học tập của bạn.","Một mặt, bạn không cần làm bài tập hay dự án ở trường.","Bạn chỉ tham gia các hoạt động xã hội mà không học tập.","Một mặt, trường học giúp bạn nghỉ ngơi và không có kỳ thi."],0,
+"<b>on one hand</b> = một mặt; <b>juggle</b> = xoay xở/cân bằng nhiều việc; <b>demands of school</b> = những yêu cầu của việc học; <b>academic skills</b> = kỹ năng học tập.",
+"Một mặt, bạn phải xoay xở với các yêu cầu của trường học, gồm kỳ thi, bài tập và dự án kiểm tra kỹ năng học tập."],
+["On the other hand, you’re likely involved in extracurricular activities, from sports and clubs to music lessons and volunteering.",
+["Mặt khác, bạn có thể tham gia các hoạt động ngoại khóa, từ thể thao và câu lạc bộ đến học nhạc và hoạt động tình nguyện.","Mặt khác, bạn chỉ tham gia các tiết học chính khóa.","Bạn không bao giờ tham gia hoạt động ngoại khóa.","Bạn chỉ tham gia các hoạt động tình nguyện mà không chơi thể thao."],0,
+"<b>on the other hand</b> = mặt khác; <b>be involved in</b> = tham gia vào; <b>extracurricular activities</b> = hoạt động ngoại khóa; <b>volunteering</b> = hoạt động tình nguyện.",
+"Mặt khác, bạn có thể tham gia các hoạt động ngoại khóa, từ thể thao, câu lạc bộ đến học nhạc và tình nguyện."],
+["Add to that the ever-present desire for social interaction with friends and family, and it’s no wonder teenagers often feel stretched thin.",
+["Thêm vào đó là mong muốn thường trực được giao tiếp với bạn bè và gia đình, nên không có gì ngạc nhiên khi thanh thiếu niên thường cảm thấy quá tải.","Thanh thiếu niên không có nhu cầu giao tiếp với bạn bè và gia đình.","Giao tiếp xã hội khiến thanh thiếu niên không bao giờ cảm thấy áp lực.","Thanh thiếu niên luôn có rất nhiều thời gian rảnh để giao tiếp."],0,
+"<b>Add to that</b> = thêm vào đó; <b>ever-present</b> = luôn hiện hữu; <b>social interaction</b> = tương tác xã hội; <b>stretched thin</b> = quá tải, có quá nhiều việc phải làm.",
+"Thêm vào đó là mong muốn luôn hiện hữu được giao tiếp với bạn bè và gia đình, nên không có gì ngạc nhiên khi thanh thiếu niên thường cảm thấy quá tải."],
+["This constant balancing act can be challenging.",
+["Việc liên tục phải cân bằng mọi thứ này có thể rất khó khăn.","Việc cân bằng mọi thứ luôn rất dễ dàng.","Thanh thiếu niên không cần cân bằng các hoạt động.","Việc cân bằng giúp mọi người tránh hoàn toàn mọi khó khăn."],0,
+"<b>balancing act</b> = việc xoay xở/cân bằng nhiều thứ; <b>challenging</b> = đầy thử thách, khó khăn.",
+"Việc liên tục phải cân bằng nhiều thứ có thể rất khó khăn."],
+["Finding enough time to meet all your commitments can be a struggle, leading to feelings of stress and anxiety.",
+["Tìm đủ thời gian để hoàn thành tất cả các trách nhiệm/cam kết có thể là một khó khăn, dẫn đến cảm giác căng thẳng và lo âu.","Có rất nhiều thời gian để hoàn thành mọi cam kết mà không gặp khó khăn.","Các cam kết luôn giúp thanh thiếu niên giảm căng thẳng.","Thiếu thời gian không bao giờ gây lo âu."],0,
+"<b>meet commitments</b> = hoàn thành các cam kết/trách nhiệm; <b>be a struggle</b> = là một điều khó khăn; <b>lead to</b> = dẫn đến.",
+"Tìm đủ thời gian để hoàn thành mọi cam kết có thể là một khó khăn, dẫn đến cảm giác căng thẳng và lo âu."],
+["Prioritizing tasks and creating a schedule can help, but unexpected events and changes in plans can throw everything out of whack.",
+["Ưu tiên các nhiệm vụ và lập thời gian biểu có thể giúp ích, nhưng những sự kiện bất ngờ và thay đổi kế hoạch có thể khiến mọi thứ trở nên rối tung.","Lập thời gian biểu luôn khiến mọi thứ tệ hơn.","Những sự kiện bất ngờ không bao giờ ảnh hưởng đến kế hoạch.","Ưu tiên nhiệm vụ có nghĩa là bỏ hết các kế hoạch."],0,
+"<b>prioritize tasks</b> = ưu tiên các nhiệm vụ; <b>create a schedule</b> = lập thời gian biểu; <b>throw everything out of whack</b> = khiến mọi thứ rối tung/mất trật tự.",
+"Ưu tiên công việc và lập lịch có thể giúp ích, nhưng những sự kiện bất ngờ và thay đổi kế hoạch có thể khiến mọi thứ rối tung."],
+["However, navigating this juggling act also offers valuable lessons.",
+["Tuy nhiên, việc xoay xở với tất cả những việc này cũng mang lại những bài học quý giá.","Việc cân bằng này không đem lại bất kỳ bài học nào.","Thanh thiếu niên nên tránh mọi trách nhiệm để học tốt hơn.","Những khó khăn luôn ngăn cản việc học hỏi."],0,
+"<b>however</b> = tuy nhiên; <b>offer valuable lessons</b> = mang lại những bài học quý giá.",
+"Tuy nhiên, việc xoay xở với tất cả những việc này cũng mang lại những bài học quý giá."],
+["It teaches teenagers valuable skills like time management, organization, and prioritization.",
+["Điều đó dạy thanh thiếu niên những kỹ năng quý giá như quản lý thời gian, tổ chức và sắp xếp thứ tự ưu tiên.","Điều đó khiến thanh thiếu niên mất các kỹ năng quản lý thời gian.","Điều đó chỉ dạy thanh thiếu niên chơi thể thao.","Điều đó khiến thanh thiếu niên không cần tổ chức công việc."],0,
+"<b>time management</b> = quản lý thời gian; <b>organization</b> = kỹ năng tổ chức; <b>prioritization</b> = việc sắp xếp thứ tự ưu tiên.",
+"Điều đó dạy thanh thiếu niên những kỹ năng quý giá như quản lý thời gian, tổ chức và ưu tiên công việc."],
+["They learn to be responsible, handle pressure, and adapt to changing situations.",
+["Họ học cách có trách nhiệm, đối phó với áp lực và thích nghi với những tình huống thay đổi.","Họ học cách tránh mọi trách nhiệm và áp lực.","Họ không học cách thích nghi với sự thay đổi.","Họ chỉ học cách đối phó với bài kiểm tra."],0,
+"<b>learn to + V</b> = học cách làm gì; <b>be responsible</b> = có trách nhiệm; <b>handle pressure</b> = đối phó với áp lực; <b>adapt to</b> = thích nghi với.",
+"Họ học cách có trách nhiệm, đối phó với áp lực và thích nghi với những tình huống thay đổi."],
+["Additionally, the diverse experiences gained through academics, activities, and social interactions contribute to personal development and self-discovery.",
+["Ngoài ra, những trải nghiệm đa dạng có được thông qua học tập, hoạt động và tương tác xã hội góp phần vào sự phát triển cá nhân và khám phá bản thân.","Những trải nghiệm đa dạng không có ảnh hưởng đến sự phát triển cá nhân.","Chỉ có học tập mới giúp con người phát triển bản thân.","Tương tác xã hội ngăn cản việc khám phá bản thân."],0,
+"<b>additionally</b> = ngoài ra; <b>diverse experiences</b> = những trải nghiệm đa dạng; <b>contribute to</b> = góp phần vào; <b>personal development</b> = phát triển cá nhân; <b>self-discovery</b> = khám phá bản thân.",
+"Ngoài ra, những trải nghiệm đa dạng từ học tập, hoạt động và tương tác xã hội góp phần vào sự phát triển cá nhân và khám phá bản thân."]
+]
+};
+
+function renderPart(n){
+ const box=document.getElementById("p"+n); box.innerHTML="";
+ sets[n].forEach((x,i)=>{
+   const q=document.createElement("div"); q.className="question"; q.id="p"+n+"q"+i;
+   q.innerHTML='<div class="en">'+(i+1)+'. '+x[0]+'</div>'+
+   '<div class="options">'+x[1].map((o,j)=>'<label class="option"><input type="radio" name="p'+n+'q'+i+'" value="'+j+'">'+String.fromCharCode(65+j)+'. '+o+'</label>').join("")+'</div>'+
+   '<div class="explanation" id="p'+n+"e"+i+'"></div>';
+   box.appendChild(q);
+ });
+}
+function submitPart(n){
+ let score=0;
+ sets[n].forEach((x,i)=>{
+  const q=document.getElementById("p"+n+"q"+i), s=q.querySelector("input:checked"), opts=q.querySelectorAll(".option");
+  opts.forEach(o=>o.classList.remove("correct","wrong"));
+  if(s){
+    const chosen=+s.value;
+    if(chosen===x[2]){score++;s.parentElement.classList.add("correct")}
+    else{s.parentElement.classList.add("wrong");opts[x[2]].classList.add("correct")}
+  }else opts[x[2]].classList.add("correct");
+  const e=document.getElementById("p"+n+"e"+i);
+  e.innerHTML='<b>Vì sao chọn đáp án này?</b> '+x[3]+
+    '<div class="meaning"><b>Giải nghĩa tiếng Việt:</b> '+x[4]+'</div>'+
+    '<div class="answer">Đáp án đúng: '+String.fromCharCode(65+x[2])+'. '+x[1][x[2]]+'</div>';
+  e.classList.add("show");
+ });
+ document.getElementById("r"+n).textContent="Score: "+score+"/"+sets[n].length;
+}
+function resetPart(n){renderPart(n);document.getElementById("r"+n).textContent="";}
+renderPart(1);renderPart(2);
+</script>
+</body>
+</html>
